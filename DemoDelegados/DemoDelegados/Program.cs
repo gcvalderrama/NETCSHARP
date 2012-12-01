@@ -16,23 +16,19 @@ namespace DemoDelegados
 
             cmdPrint += Print;
 
-            var result = cmdPrint.BeginInvoke("Juan", null, null);
-
-            Otra();
-
-            while (!result.IsCompleted)
-            {
-                Console.WriteLine("esperando");
-                Thread.Sleep(1000);
-            }
-
-            var men = cmdPrint.EndInvoke(result);
-
-            Console.WriteLine(men);
-
+            var cb = new AsyncCallback(OnTerminar);
+            var result = cmdPrint.BeginInvoke("Juan", cb, cmdPrint);
+            Otra();            
             Console.ReadLine();
-
         }
+        public static void OnTerminar(IAsyncResult result)
+        {
+            var del = result.AsyncState as Func<string, string>;
+            var men = del.EndInvoke(result);
+            Console.WriteLine(men);
+        }
+
+
         public static string Print(string mensaje)
         {
             Thread.Sleep(10000);
