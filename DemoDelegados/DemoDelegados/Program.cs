@@ -14,11 +14,11 @@ namespace DemoDelegados
             Func<string, string> cmdPrint = null;
 
             cmdPrint = new Func<string, string>(
-                    delegate(string mensaje) {
-                        Thread.Sleep(10000);
-                        return "Hola " + mensaje;
-                    }
-                );
+                    x=> { Thread.Sleep(10000); return  "Hola " + x;}
+            );
+
+                 
+
             var cb = new AsyncCallback(delegate(IAsyncResult result) {
                 var del = result.AsyncState as Func<string, string>;
                 var men = del.EndInvoke(result);
