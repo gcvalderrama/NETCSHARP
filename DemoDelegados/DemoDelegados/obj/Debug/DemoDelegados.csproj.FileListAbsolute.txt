@@ -1,0 +1,5 @@
+C:\NETCSHARP\DemoDelegados\DemoDelegados\bin\Debug\DemoDelegados.exe.config
+C:\NETCSHARP\DemoDelegados\DemoDelegados\bin\Debug\DemoDelegados.exe
+C:\NETCSHARP\DemoDelegados\DemoDelegados\bin\Debug\DemoDelegados.pdb
+C:\NETCSHARP\DemoDelegados\DemoDelegados\obj\Debug\DemoDelegados.exe
+C:\NETCSHARP\DemoDelegados\DemoDelegados\obj\Debug\DemoDelegados.pdb
